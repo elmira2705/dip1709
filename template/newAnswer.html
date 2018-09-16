@@ -1,0 +1,74 @@
+<div>
+    <h3>Вопрос</h3>
+    <table>
+        <thead>
+            <tr>
+                <td>Вопрос</td>
+                <td>Статус</td>
+            </tr>
+        </thead>
+        {% if question %}
+        <tbody>
+            <tr>
+                <td>
+                    <textarea name="description" cols="30" rows="2">
+                        {{ question.description }}
+                    </textarea>
+                </td>
+                <td>
+                    {% if question.status == 1 %}
+                        <span>опубликован</span>
+                    {% elseif question.status == 2 %}
+                        <span>скрыт</span>
+                    {% else %}
+                        <span>ожидает ответа</span>
+                    {% endif %}
+                </td>
+            </tr>
+        </tbody>
+        {% else %}
+        <tbody>
+            <tr>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+        {% endif %}
+    </table>
+</div>
+<div>
+    <h3>Добавить ответ</h3>
+    <div>
+        <form action="?/answer/add" method="POST">
+            <textarea name="description" placeholder="Текст ответа" cols="30" rows="2"></textarea><br>
+            <input type="checkbox" name="status" value="1">
+            <label for="status">Опубликовать вопрос</label><br>
+            <input type="hidden" name="question_id" value="{{ question.id }}">
+            <input type="submit" name="add" value="Добавить">
+        </form>
+    </div>
+    <h3>Ответы</h3>
+    <table>
+        <thead>
+            <tr>
+                <td>Ответ</td>
+                <td>Дата добавления</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% if answers %}
+                {% for answer in answers %}
+                <tr>
+                    <td>{{ answer.description|e }}</td>
+                    <td>{{ answer.date_added }}</td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td> - </td>
+                    <td> - </td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>

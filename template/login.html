@@ -1,0 +1,11 @@
+<h2>Авторизация</h2>
+<div>
+    {{ users.result }}<br>
+</div>
+<div>
+    <form action="?/user/login" method="POST" class="user-input-form">
+        <input type="text" name="user_name" placeholder="Имя пользователя" value="" autofocus>
+        <input type="password" name="user_password" placeholder="Пароль" value="">
+        <input type="submit" name="login" value="Вход" class="button select-button">
+    </form><br>
+</div>

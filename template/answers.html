@@ -1,0 +1,49 @@
+<div>
+    <h3>Вопрос</h3>
+    <table>
+        <thead>
+            <tr>
+                <td>Вопрос</td>
+            </tr>
+        </thead>
+        {% if question %}
+        <tbody>
+            <tr>
+                <td>{{ question.description }}</td>
+            </tr>
+        </tbody>
+        {% else %}
+        <tbody>
+            <tr>
+                <td>-</td>
+            </tr>
+        </tbody>
+        {% endif %}
+    </table>
+</div>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>Ответ</td>
+                <td>Дата добавления</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% if answers %}
+            {% for answer in answers %}
+                <tr>
+                    <td>{{ answer.description|e }}</td>
+                    <td>{{ answer.date_added }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td> - </td>
+                <td> - </td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+
+</div>

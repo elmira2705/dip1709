@@ -1,0 +1,10 @@
+{% extends "adminPage.twig" %}
+{% block content %}
+    <div class="left-container">
+        {% include 'categoriesAdmin.html' %}
+    </div>
+    <div class="right-container">
+        {% include 'questionsHeaderUnanswered.html' %}
+        {% include 'questionsAdmin.html' %}
+    </div>
+{% endblock %}

@@ -1,0 +1,5 @@
+<ul>
+    {% for cat in categories %}
+        <li><a href="?/question/getByCategory/id/{{ cat.id }}">{{ cat.name }}</a></li>
+    {% endfor %}
+</ul>

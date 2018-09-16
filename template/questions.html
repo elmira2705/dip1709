@@ -1,0 +1,29 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>Вопрос</td>
+                <td>Дата добавления</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% if questions %}
+                {% for question in questions %}
+                <tr>
+                    <td>
+                        <a href="?/answer/getByQuestion/questionId/{{ question.id }}">
+                            {{ question.description|e }}
+                        </a>
+                    </td>
+                    <td>{{ question.date_added }}</td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td> - </td>
+                    <td> - </td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
