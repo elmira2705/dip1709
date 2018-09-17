@@ -15,6 +15,6 @@
     				require_once "./view/$fileName.php";
     			}
     			else
-    				die('Подключить ', $className, ' не удалось.');
+    				die('Подключить '. $className. ' не удалось.');
     		}
     	);
