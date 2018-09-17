@@ -9,5 +9,4 @@ trait NameTrait
         $record = $this->getRecordByFieldValue($table, $fields, 'name', $name);
         return $record;
     }
-
-}
+};
