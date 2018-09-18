@@ -6,7 +6,7 @@ class Database
 
     private function getConnection()
     {
-        require_once 'connect.php';
+        require_once 'Connect.php';
         try {
             $pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
             return $pdo;
