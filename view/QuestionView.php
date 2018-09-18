@@ -12,7 +12,7 @@ class QuestionView extends View
         parent::__construct();
     }
 
-    public function render($questions, $categories)
+    public function render($questions, $categories = NULL)
     {
         parent::render($this -> template, array('questions' => $questions, 'categories' => $categories));
     }
