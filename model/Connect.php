@@ -1,6 +1,6 @@
 <?php
     ini_set( "display_errors", true );
-    define( "DB_USERNAME", "aktambaeva" );
+    define( "DB_USER", "aktambaeva" );
     define( "DB_NAME", "aktambaeva" );
     define( "DB_PASSWORD", "neto1710" );
     define( "CHARSET", "utf8" );
